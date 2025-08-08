@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
+    <meta charset="UTF-8">
     <title>Who Quiz</title>
 </head>
 <body>
-    <h1>당신은 누구를 맞출 수 있을까요?</h1>
+    <h1>🤔 누구일까요?</h1>
     <ul>
-        {% for person in data %}
-            <li>{{ person.name }} - {{ person.field }} - {{ person.agency }} - {{ person.age }}세</li>
-        {% endfor %}
+        <li>분야: {{ person['분야'] }}</li>
+        <li>소속사: {{ person['소속사'] }}</li>
+        <li>나이: {{ person['나이'] }}세</li>
     </ul>
+
+    <form method="post">
+        <input type="text" name="guess" placeholder="이름을 입력하세요">
+        <button type="submit">제출</button>
+    </form>
+
+    {% if result %}
+        <p>{{ result }}</p>
+    {% endif %}
 </body>
 </html>
