@@ -4,26 +4,31 @@ import random
 
 app = Flask(__name__)
 
-with open('data/celebrities.json', encoding='utf-8') as f:
-    data = json.load(f)
+# 정답 데이터 로드
+with open('data/celebrities.json', 'r', encoding='utf-8') as f:
+    celebrities = json.load(f)
 
-# 무작위 인물 고르기
-current = random.choice(data)
+# 하나 랜덤으로 고름
+target = random.choice(celebrities)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    global current
-    result = ""
-
+    message = ""
     if request.method == "POST":
-        guess = request.form.get("guess")
-        if guess.strip() == current["이름"]:
-            result = "🎉 정답입니다!"
-            current = random.choice(data)
+        guess = request.form["guess"]
+        if guess.strip() == target["name"]:
+            message = f"🎉 정답입니다! {target['name']}을(를) 맞히셨어요!"
         else:
-            result = f"❌ 오답입니다. 정답은 {current['이름']}!"
+            message = "❌ 틀렸습니다. 다시 시도해보세요!"
 
-    return render_template("index.html", person=current, result=result)
+    # 정답의 힌트 전달
+    hint = {
+        "profession": target["profession"],
+        "agency": target["agency"],
+        "age": target["age"]
+    }
+
+    return render_template("index.html", hint=hint, message=message)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
