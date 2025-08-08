@@ -4,22 +4,23 @@
     <title>Who Quiz</title>
 </head>
 <body>
-    <h1>당신은 누구를 맞출 수 있을까요?</h1>
-    
-    {% if message %}
-        <p><strong>{{ message }}</strong></p>
-    {% endif %}
-
-    <ul>
-        <li>직업: {{ hint['profession'] }}</li>
-        <li>소속: {{ hint['agency'] }}</li>
-        <li>나이: {{ hint['age'] }}</li>
-    </ul>
+    <h1>💡 Who Quiz</h1>
+    <p>힌트를 보고 인물을 맞혀보세요!</p>
 
     <form method="POST">
-        <label for="guess">정답을 입력하세요:</label>
-        <input type="text" name="guess" id="guess" required>
+        <label for="guess">당신의 추측:</label>
+        <input type="text" name="guess" required>
         <button type="submit">제출</button>
     </form>
+
+    {% if feedback %}
+        <h2>결과</h2>
+        <ul>
+            <li>이름: {{ feedback.name_match }}</li>
+            <li>나이: {{ feedback.age_match }}</li>
+            <li>분야: {{ feedback.field_match }}</li>
+            <li>소속사: {{ feedback.agency_match }}</li>
+        </ul>
+    {% endif %}
 </body>
 </html>
