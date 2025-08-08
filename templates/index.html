@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Who Quiz</title>
+</head>
+<body>
+    <h1>당신은 누구를 맞출 수 있을까요?</h1>
+    <ul>
+        {% for person in data %}
+            <li>{{ person.name }} - {{ person.field }} - {{ person.agency }} - {{ person.age }}세</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
