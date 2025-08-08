@@ -1,0 +1,23 @@
+[
+  {
+    "name": "아이유",
+    "gender": "여성",
+    "birth_year": 1993,
+    "fields": ["가수", "배우"],
+    "agency": "EDAM"
+  },
+  {
+    "name": "장원영",
+    "gender": "여성",
+    "birth_year": 2004,
+    "fields": ["가수"],
+    "agency": "스타쉽"
+  },
+  {
+    "name": "유재석",
+    "gender": "남성",
+    "birth_year": 1972,
+    "fields": ["방송인"],
+    "agency": "안테나"
+  }
+]
