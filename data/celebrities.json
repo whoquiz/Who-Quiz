@@ -1,14 +1,20 @@
 [
   {
-    "name": "정국",
-    "age": 27,
+    "name": "아이유",
+    "age": 31,
     "field": "가수",
-    "agency": "하이브"
+    "agency": "이담엔터테인먼트"
   },
   {
-    "name": "손흥민",
-    "age": 32,
-    "field": "축구선수",
-    "agency": "토트넘"
+    "name": "정해인",
+    "age": 37,
+    "field": "배우",
+    "agency": "FNC 엔터테인먼트"
+  },
+  {
+    "name": "뷔",
+    "age": 29,
+    "field": "가수",
+    "agency": "하이브"
   }
 ]
